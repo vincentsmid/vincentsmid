@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap');
 
 :root {
-    --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    --font-body: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --font-mono: 'Inter', monospace;
+    --font-mono: 'Courier New', Courier, monospace;
 
     /* Title bar color */
     --color-theme-1: #dfdfdf;
@@ -12,8 +11,8 @@
     --color-theme-2: #ffffff;
     /* Title bar text color */
     --color-theme-3: #676767;
-    /* Title bar misc color SHOULD BE DARKER */
-    --color-theme-4: #d4d4d4;
+    /* Title bar misc color */
+    --color-theme-4: #bbb;
     /* Close button color */
     --color-theme-5: #fefcfc;
     /* Minimize button color */
@@ -22,11 +21,9 @@
     --color-theme-7: #27c93f;
     /* Close button hover color */
     --color-theme-8: #e0443e;
-    
+
     --color-bg-1: #5bdbf6;
     --color-text: rgba(0, 0, 0, 0.7);
-    --column-width: 42rem;
-    --column-margin-top: 4rem;
     font-family: var(--font-body);
     color: var(--color-text);
 }
@@ -48,7 +45,7 @@ body {
     background-attachment: fixed;
     background-size: 100vw 100vh;
     font-size: 1.6rem;
-    cursor: url('src/lib/images/Cursor_Point.png'), auto;
+    cursor: url('/Cursor_Point.png'), auto;
 }
 
 *, *:before, *:after {
@@ -71,7 +68,7 @@ h1 {
 }
 
 a {
-    color: var(--color-theme-1);
+    color: #4A5699;
     text-decoration: none;
 }
 
@@ -79,17 +76,47 @@ a:hover {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 2560px) and (max-width: 3839px) {
-  html {
-      font-size: 91.75%; /* Adjusted font size for 1440p screens */
-  }
-
+/* Mobile fallback */
+.mobile-notice {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: var(--font-body);
 }
 
-/* Media Query for 4K screens */
-@media screen and (min-width: 3840px) {
-  html {
-      font-size: 125%; /* Adjusted font size for 4K screens */
-  }
+.mobile-notice h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
 
+.mobile-notice p {
+    font-size: 1.6rem;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-notice {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+    html {
+        font-size: 91.75%;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    html {
+        font-size: 125%;
+    }
 }

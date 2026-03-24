@@ -36,7 +36,5 @@
 	"engines": {
 		"node": ">=24.0.0"
 	},
-	"dependencies": {
-		"@lottiefiles/dotlottie-web": "^0.67.0"
-	}
+	"dependencies": {}
 }

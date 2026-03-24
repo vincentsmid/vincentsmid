@@ -1,124 +1,67 @@
 <script>
     import './styles.css';
-    import { onMount } from 'svelte';
-
-    let scaleFactor = 1;
-
-    onMount (() => {
-        console.log(window.innerWidth)
-    })
-
 </script>
 
-<div class="container">
-    <div>
-        <img src="https://i.imgur.com/8QZqQ1M.png" alt="Vincent's Logo" width="200" height="200">
-    </div>
-    <div class="rightsubcontainer">
-        <h1>Hello cruel world! 🤩</h1>
-        <p>My name is Vincent Smid and I am a Software Developer.</p>
-        <p>To find more information - consider opening the following "apps":</p>
-        <div class="appcontainer">
-            <div class="app">
-                <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M691.573 338.89c-1.282 109.275-89.055 197.047-198.33 198.331-109.292 1.282-197.065-90.984-198.325-198.331-0.809-68.918-107.758-68.998-106.948 0 1.968 167.591 137.681 303.31 305.272 305.278C660.85 646.136 796.587 503.52 798.521 338.89c0.811-68.998-106.136-68.918-106.948 0z"
-                          fill="#4A5699"/>
-                    <path d="M294.918 325.158c1.283-109.272 89.051-197.047 198.325-198.33 109.292-1.283 197.068 90.983 198.33 198.33 0.812 68.919 107.759 68.998 106.948 0C796.555 157.567 660.839 21.842 493.243 19.88c-167.604-1.963-303.341 140.65-305.272 305.278-0.811 68.998 106.139 68.919 106.947 0z"
-                          fill="#C45FA0"/>
-                    <path d="M222.324 959.994c0.65-74.688 29.145-144.534 80.868-197.979 53.219-54.995 126.117-84.134 201.904-84.794 74.199-0.646 145.202 29.791 197.979 80.867 54.995 53.219 84.13 126.119 84.79 201.905 0.603 68.932 107.549 68.99 106.947 0-1.857-213.527-176.184-387.865-389.716-389.721-213.551-1.854-387.885 178.986-389.721 389.721-0.601 68.991 106.349 68.933 106.949 0.001z"
-                          fill="#E5594F"/>
-                </svg>
-                <p>Who am I?</p>
-            </div>
-            <div class="app">
-                <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M691.573 338.89c-1.282 109.275-89.055 197.047-198.33 198.331-109.292 1.282-197.065-90.984-198.325-198.331-0.809-68.918-107.758-68.998-106.948 0 1.968 167.591 137.681 303.31 305.272 305.278C660.85 646.136 796.587 503.52 798.521 338.89c0.811-68.998-106.136-68.918-106.948 0z"
-                          fill="#4A5699"/>
-                    <path d="M294.918 325.158c1.283-109.272 89.051-197.047 198.325-198.33 109.292-1.283 197.068 90.983 198.33 198.33 0.812 68.919 107.759 68.998 106.948 0C796.555 157.567 660.839 21.842 493.243 19.88c-167.604-1.963-303.341 140.65-305.272 305.278-0.811 68.998 106.139 68.919 106.947 0z"
-                          fill="#C45FA0"/>
-                    <path d="M222.324 959.994c0.65-74.688 29.145-144.534 80.868-197.979 53.219-54.995 126.117-84.134 201.904-84.794 74.199-0.646 145.202 29.791 197.979 80.867 54.995 53.219 84.13 126.119 84.79 201.905 0.603 68.932 107.549 68.99 106.947 0-1.857-213.527-176.184-387.865-389.716-389.721-213.551-1.854-387.885 178.986-389.721 389.721-0.601 68.991 106.349 68.933 106.949 0.001z"
-                          fill="#E5594F"/>
-                </svg>
-                <p>Who am I?</p>
-            </div>
-            <div class="app">
-                <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M691.573 338.89c-1.282 109.275-89.055 197.047-198.33 198.331-109.292 1.282-197.065-90.984-198.325-198.331-0.809-68.918-107.758-68.998-106.948 0 1.968 167.591 137.681 303.31 305.272 305.278C660.85 646.136 796.587 503.52 798.521 338.89c0.811-68.998-106.136-68.918-106.948 0z"
-                          fill="#4A5699"/>
-                    <path d="M294.918 325.158c1.283-109.272 89.051-197.047 198.325-198.33 109.292-1.283 197.068 90.983 198.33 198.33 0.812 68.919 107.759 68.998 106.948 0C796.555 157.567 660.839 21.842 493.243 19.88c-167.604-1.963-303.341 140.65-305.272 305.278-0.811 68.998 106.139 68.919 106.947 0z"
-                          fill="#C45FA0"/>
-                    <path d="M222.324 959.994c0.65-74.688 29.145-144.534 80.868-197.979 53.219-54.995 126.117-84.134 201.904-84.794 74.199-0.646 145.202 29.791 197.979 80.867 54.995 53.219 84.13 126.119 84.79 201.905 0.603 68.932 107.549 68.99 106.947 0-1.857-213.527-176.184-387.865-389.716-389.721-213.551-1.854-387.885 178.986-389.721 389.721-0.601 68.991 106.349 68.933 106.949 0.001z"
-                          fill="#E5594F"/>
-                </svg>
-                <p>Who am I?</p>
-            </div>
+<div class="about">
+    <div class="profile-section">
+        <img src="https://i.imgur.com/8QZqQ1M.png" alt="Vincent Smid" class="avatar" />
+        <div class="intro">
+            <h1>Vincent Smid</h1>
+            <p class="tagline">Software Developer</p>
         </div>
     </div>
-    <iframe class="container-resize-sensor"></iframe>
+
+    <div class="bio">
+        <p>
+            Hello! I'm a software developer with a passion for building clean, interactive
+            web experiences. I enjoy working across the full stack, from crafting pixel-perfect
+            UIs to designing robust backend systems.
+        </p>
+        <p>
+            When I'm not coding, you can find me exploring new technologies, contributing
+            to open source, or tinkering with creative side projects like this desktop-themed
+            portfolio.
+        </p>
+    </div>
 </div>
 
 <style>
-    :root {
-        --scale-factor: 1; /* default value */
+    .about {
+        padding: 1.5rem;
     }
 
-    .container {
-        resize: both;
-        overflow: auto;
+    .profile-section {
         display: flex;
-        justify-content: left;
-        /* Add any other .container styles you have here */
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
     }
 
-    .rightsubcontainer {
-        width: calc(32.5rem * var(--scale-factor));
-        margin: calc(0.5rem * var(--scale-factor)) calc(2rem * var(--scale-factor));
-        /* Add any other .rightsubcontainer styles you have here */
+    .avatar {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
     }
 
-    .appcontainer {
-        width: calc(32.5rem * var(--scale-factor));
-        margin-top: calc(1rem * var(--scale-factor));
-        /* Add any other .appcontainer styles you have here */
+    .intro h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 0.3rem;
     }
 
-    .app {
-        margin: calc(0.5rem * var(--scale-factor));
-        /* Add any other .app styles you have here */
+    .tagline {
+        font-size: 1.5rem;
+        color: #666;
+        margin: 0;
     }
 
-    p {
-        font-size: calc(2rem * var(--scale-factor));
-        margin-top: calc(0.25rem * var(--scale-factor));
-        margin-bottom: calc(0.25rem * var(--scale-factor));
-        /* Add any other p styles you have here */
+    .bio p {
+        font-size: 1.5rem;
+        color: #444;
+        line-height: 1.7;
+        margin: 0 0 1rem 0;
     }
-
-    img {
-        width: calc(20rem * var(--scale-factor));
-        height: calc(34.2rem * var(--scale-factor));
-        margin: calc(0.4rem * var(--scale-factor));
-        /* Add any other img styles you have here */
-    }
-
-    svg {
-        width: calc(4rem * var(--scale-factor));
-        height: calc(4rem * var(--scale-factor));
-        /* Add any other svg styles you have here */
-    }
-
-    .container-resize-sensor {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        pointer-events: none;
-        z-index: -1;
-    }
-
 </style>

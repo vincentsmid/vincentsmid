@@ -1,6 +1,11 @@
 import { expect, test } from '@playwright/test';
 
-test('index page has expected h1', async ({ page }) => {
+test('index page has taskbar', async ({ page }) => {
 	await page.goto('/');
-	expect(await page.textContent('h1')).toBe('Welcome to SvelteKit');
+	await expect(page.locator('.taskbar')).toBeVisible();
+});
+
+test('index page has background', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.locator('.background-container')).toBeVisible();
 });

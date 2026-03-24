@@ -12,6 +12,11 @@
     <Background/>
 </div>
 
+<div class="mobile-notice">
+    <h1>VincentOS</h1>
+    <p>This portfolio is best experienced on a desktop browser. Please resize your window or visit on a larger screen.</p>
+</div>
+
 <style>
     .app {
         display: flex;
@@ -25,11 +30,4 @@
         flex-direction: column;
         box-sizing: border-box;
     }
-
-    @media (min-width: 480px) {
-        footer {
-            padding: 12px 0;
-        }
-    }
-
 </style>

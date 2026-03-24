@@ -1,53 +1,106 @@
 <script>
-  import { onMount } from 'svelte';
+    import { onMount } from 'svelte';
 
-  let showEnded = $state(false);
-  let playerVisible = $state(true);
-  /** @type {HTMLDivElement | undefined} */
-  let playerContainer = $state();
+    let showLine1 = $state(false);
+    let showLine2 = $state(false);
+    let showContent = $state(false);
 
-  onMount(async () => {
-    if (typeof window !== 'undefined') {
-      const { DotLottie } = await import('@lottiefiles/dotlottie-web');
-
-      const canvas = document.createElement('canvas');
-      canvas.style.width = '57rem';
-      canvas.style.height = '32rem';
-      playerContainer?.appendChild(canvas);
-
-      const player = new DotLottie({
-        canvas,
-        src: 'https://lottie.host/fd36e9cc-2cd6-4956-8751-2549d5abe64f/PsTImqB3O2.json',
-        autoplay: true,
-        speed: 1
-      });
-
-      player.addEventListener('complete', () => {
-        playerVisible = false;
-        showEnded = true;
-      });
-    }
-  });
+    onMount(() => {
+        showLine1 = true;
+        setTimeout(() => { showLine2 = true; }, 1800);
+        setTimeout(() => { showContent = true; }, 3400);
+    });
 </script>
 
-{#if playerVisible}
-  <div class="player-container" bind:this={playerContainer}>
-  </div>
-{/if}
-
-{#if showEnded}
-  <div class="greeting">
-    <h1>Hi there!</h1>
-  </div>
-{/if}
+<div class="terminal">
+    {#if showLine1}
+        <p class="line">
+            <span class="prompt">&gt;</span>
+            <span class="typing typing-1">Welcome to VincentOS v1.0</span>
+        </p>
+    {/if}
+    {#if showLine2}
+        <p class="line">
+            <span class="prompt">&gt;</span>
+            <span class="typing typing-2">Software Developer | Problem Solver</span>
+        </p>
+    {/if}
+    {#if showContent}
+        <div class="intro">
+            <p>Hi there! I'm <strong>Vincent Smid</strong>.</p>
+            <p>Explore my desktop to learn more about me. Try opening the apps in the taskbar below.</p>
+        </div>
+    {/if}
+</div>
 
 <style>
-  .player-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-</style>
+    .terminal {
+        font-family: 'Courier New', Courier, monospace;
+        padding: 1.5rem;
+        min-height: 20rem;
+    }
 
-<!-- TODO: fix window fullscreen content scaling, add something after this animation, fix draggable bug-->
+    .line {
+        font-size: 1.8rem;
+        margin: 0.6rem 0;
+        display: flex;
+        gap: 0.8rem;
+        color: #333;
+    }
+
+    .prompt {
+        color: #27c93f;
+        font-weight: bold;
+    }
+
+    .typing {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #333;
+        animation-fill-mode: forwards;
+    }
+
+    .typing-1 {
+        width: 0;
+        animation: typing 1.5s steps(25) 0s forwards, blink 0.6s step-end 3 forwards, hide-caret 0s 1.7s forwards;
+    }
+
+    .typing-2 {
+        width: 0;
+        animation: typing 1.3s steps(35) 0s forwards, blink 0.6s step-end 3 forwards, hide-caret 0s 1.5s forwards;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+
+    @keyframes hide-caret {
+        to { border-color: transparent; }
+    }
+
+    .intro {
+        margin-top: 2rem;
+        font-family: var(--font-body);
+        animation: fadeIn 0.8s ease-in;
+    }
+
+    .intro p {
+        font-size: 1.6rem;
+        color: #444;
+        margin: 0.5rem 0;
+    }
+
+    .intro strong {
+        color: #222;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(1rem); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
