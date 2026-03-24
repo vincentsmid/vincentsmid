@@ -2,12 +2,12 @@
     import Draggable from './Draggable.svelte';
     import {windows} from './store.js';
     import {fly} from 'svelte/transition';
-    
+
     function closeWindow(id) {
         windows.update(n => n.filter(win => win.id !== id));
     }
 
-    let maximizedWindows = new Set();
+    let maximizedWindows = $state(new Set());
 
     function toggleWindowMaximized(id) {
         let windowElem = document.querySelector(`.window[data-id="${id}"]`);
@@ -49,9 +49,9 @@
                         </button>
                         <span>{content.title}</span>
                         <div class="button-box container">
-                            <button class="button-close" on:click={() => toggleWindowMaximized(id)}></button>
-                            <button class="button-close" on:click={() => toggleWindowMaximized(id)}></button>
-                            <button class="button-close" on:click={() => closeWindow(id)}></button>
+                            <button class="button-close" onclick={() => toggleWindowMaximized(id)}></button>
+                            <button class="button-close" onclick={() => toggleWindowMaximized(id)}></button>
+                            <button class="button-close" onclick={() => closeWindow(id)}></button>
                         </div>
                     </div>
                 </Draggable>
@@ -70,14 +70,14 @@
                     </button>
                     <span>{content.title}</span>
                     <div class="button-box container">
-                        <button class="button-close" on:click={() => closeWindow(id)}></button>
-                        <button class="button-close" on:click={() => toggleWindowMaximized(id)}></button>
-                        <button class="button-close" on:click={() => closeWindow(id)}></button>
+                        <button class="button-close" onclick={() => closeWindow(id)}></button>
+                        <button class="button-close" onclick={() => toggleWindowMaximized(id)}></button>
+                        <button class="button-close" onclick={() => closeWindow(id)}></button>
                     </div>
                 </div>
             {/if}
             <div class="window-content">
-                <svelte:component this={content.body}/>
+                <content.body />
             </div>
         </div>
     </div>

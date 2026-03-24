@@ -1,4 +1,5 @@
-<script lang="js">
+<script>
+    let { children } = $props();
     let isDragging = false; /* FIXME fix window glitching by merging components */
 
     function onMouseDown(event) {
@@ -26,6 +27,7 @@
     }
 </script>
 
-<div on:mousedown={onMouseDown}>
-    <slot></slot>
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div onmousedown={onMouseDown}>
+    {@render children()}
 </div>

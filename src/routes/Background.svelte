@@ -2,7 +2,7 @@
     import Background from '$lib/images/bground.jpg'
     import BackgroundLowRes from '$lib/images/bground_lowres.jpg'
 
-    let imageLoaded = false;
+    let imageLoaded = $state(false);
 
     function handleImageLoad() {
         imageLoaded = true;
@@ -12,14 +12,19 @@
 <div class="background-container">
     <div
             class="background-image low-res"
-            style="background-image: url({BackgroundLowRes});"
-            use:handleImageLoad>
+            style="background-image: url({BackgroundLowRes});">
     </div>
+
+    <img
+        src={Background}
+        alt=""
+        style="display: none;"
+        onload={handleImageLoad}
+    />
 
     <div
             class="background-image high-res {imageLoaded ? 'loaded' : ''}"
-            style="background-image: url({Background});"
-            onload={handleImageLoad}>
+            style="background-image: url({Background});">
     </div>
 </div>
 

@@ -2,9 +2,6 @@
     import './styles.css';
     import TaskBar from './TaskBar.svelte';
     import WindowManager from './WindowManager.svelte';
-    import { writable } from 'svelte/store';
-
-    export const windows = writable([]);
 </script>
 
 <section>

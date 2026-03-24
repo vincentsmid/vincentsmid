@@ -1,11 +1,13 @@
 <script>
   import './styles.css';
   import Background from "./Background.svelte";
+
+  let { children } = $props();
 </script>
 
 <div class="app">
     <main>
-        <slot/>
+        {@render children()}
     </main>
     <Background/>
 </div>
