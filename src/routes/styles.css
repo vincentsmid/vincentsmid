@@ -76,36 +76,10 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Mobile fallback */
-.mobile-notice {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    font-family: var(--font-body);
-}
-
-.mobile-notice h1 {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.mobile-notice p {
-    font-size: 1.6rem;
-    opacity: 0.9;
-}
-
 @media screen and (max-width: 768px) {
-    .mobile-notice {
-        display: flex;
-        flex-direction: column;
+    body {
+        overflow: auto;
+        cursor: auto;
     }
 }
 

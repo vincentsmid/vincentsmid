@@ -12,10 +12,6 @@
     <Background/>
 </div>
 
-<div class="mobile-notice">
-    <h1>VincentOS</h1>
-    <p>This portfolio is best experienced on a desktop browser. Please resize your window or visit on a larger screen.</p>
-</div>
 
 <style>
     .app {
